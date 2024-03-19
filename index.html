@@ -26,11 +26,11 @@
     <div v-if="clicked">
       <h2 v-if="listMail.length < 10" class="m-2">{{ loadMessage }}</h2>
     
-      <ul v-else class="m-2">
+      <ul v-else class="m-2 p-0">
         <li
-        class="fs-3"
-        v-for="mail in listMail">
-        {{ mail }}
+        class="fs-3 list-unstyled"
+        v-for="(mail, i) in listMail">
+        {{ index(i) }} - {{ mail }}
         </li>
       </ul>
     </div>

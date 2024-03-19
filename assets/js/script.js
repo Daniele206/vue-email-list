@@ -38,6 +38,13 @@ createApp({
           });
         }
       }
+    },
+
+    index(i){
+      if(i+1 < 10){
+        return "0" + (i + 1)
+      }
+      return i + 1
     }
   },
 
