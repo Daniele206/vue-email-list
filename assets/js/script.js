@@ -14,7 +14,7 @@ createApp({
 
   methods:{
     getMail(){
-      if(this.listMail.length < 1){
+      if(this.click < 1){
         for(let i = 0; i < 10; i++){
           axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
           .then(res => {
@@ -28,8 +28,8 @@ createApp({
     },
 
     getNewMail(){
-      this.listMail.splice(0, this.listMail.length)
-      if(this.listMail.length < 1){
+      if(this.listMail.length === 10){
+        this.listMail.splice(0, this.listMail.length)
         for(let i = 0; i < 10; i++){
           axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
           .then(res => {
