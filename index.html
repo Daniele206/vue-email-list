@@ -13,9 +13,15 @@
   <div id="app">
     <h1 class="fw-bold m-2">{{title}}</h1>
     <button
+    v-if="click === 0"
     class="btn btn-primary m-2"
     @click="getMail()"
     >Genera 10 Mail</button>
+    <button
+    v-else
+    class="btn btn-primary m-2"
+    @click="getNewMail()"
+    >Genera 10 Mail Diverse</button>
 
     <div v-if="clicked">
       <h2 v-if="listMail.length < 10" class="m-2">{{ loadMessage }}</h2>
