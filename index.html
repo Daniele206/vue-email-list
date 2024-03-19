@@ -11,7 +11,19 @@
 </head>
 <body>
   <div id="app">
+    <h1 class="fw-bold m-2">{{title}}</h1>
+    <button
+    class="btn btn-primary"
+    @click="getMail()"
+    >Genera 10 Mail</button>
 
+    <ul>
+      <li
+      class="fs-3"
+      v-for="mail in listMail">
+      {{ mail }}
+      </li>
+    </ul>
   </div>
 
   <script src="./assets/js/script.js"></script>
