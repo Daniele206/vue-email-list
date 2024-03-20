@@ -4,6 +4,7 @@ createApp({
 
   data(){
     return{
+      apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
       title: 'Vue Email FileList',
       listMail: [],
       clicked: false,
@@ -16,7 +17,7 @@ createApp({
     getMail(){
       if(this.click < 1){
         for(let i = 0; i < 10; i++){
-          axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+          axios.get(this.apiUrl)
           .then(res => {
             this.listMail.push(res.data.response);
           });
@@ -30,7 +31,7 @@ createApp({
       if(this.listMail.length === 10){
         this.listMail.splice(0, this.listMail.length)
         for(let i = 0; i < 10; i++){
-          axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+          axios.get(this.apiUrl)
           .then(res => {
             this.listMail.push(res.data.response);
           });
